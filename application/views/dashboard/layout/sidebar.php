@@ -25,7 +25,7 @@
         </li>
        
         <li class="treeview">
-          <a href="#">
+          <a href="<?php echo base_url('/penelitian') ?>">
             <i class="fa fa-pie-chart"></i>
             <span>Penelitian</span>
           </a>
