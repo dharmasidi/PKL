@@ -10,13 +10,13 @@
 		}
 
 		public function tampil(){
-			$this->load->view('/dashboard/pengabdian/tampil');
+			$this->load->view('/dashboard/penelitian/tampil');
 		}
 		public function tambah(){
-			$this->load->view('/dashboard/pengabdian/tambah');
+			$this->load->view('/dashboard/penelitian/tambah');
 		}
 		public function edit(){
-			$this->load->view('/dashboard/pengabdian/edit');
+			$this->load->view('/dashboard/penelitian/edit');
 		}
 	}
   ?>

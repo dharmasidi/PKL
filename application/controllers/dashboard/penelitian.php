@@ -18,8 +18,13 @@ class penelitian extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
-	public function index()
-	{
-		$this->load->view('dashboard/penelitian/tampil');
-	}
+		public function tampil(){
+			$this->load->view('/dashboard/penelitian/tampil');
+		}
+		public function tambah(){
+			$this->load->view('/dashboard/penelitian/tambah');
+		}
+		public function edit(){
+			$this->load->view('/dashboard/penelitian/edit');
+		}
 }
