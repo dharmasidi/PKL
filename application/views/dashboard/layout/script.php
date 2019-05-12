@@ -23,6 +23,9 @@
 <script src="<?php echo base_url("assets/template/bower_components");?>/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="<?php echo base_url("assets/template/bower_components");?>/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url("assets/template/bower_components");?>/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url("assets/template/bower_components");?>/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="<?php echo base_url("assets/template/plugins");?>/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Slimscroll -->
