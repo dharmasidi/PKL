@@ -7,7 +7,7 @@
           <img src="<?php echo base_url("assets/template/dist");?>/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>Putu Indah Pradnyawati</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -17,28 +17,28 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
+        <li>
           <a href="#">
-            <i class="fa fa-dashboard"></i> 
+            <i class=" fa fa-graduation-cap"></i> 
             <span>Pendidikan</span>
           </a>
         </li>
        
-        <li class="treeview">
+        <li>
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
+            <i class="fa fa-book"></i>
             <span>Penelitian</span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="<?php echo base_url('/dashboard/pengabdian/tampil') ?>">
-            <i class="fa fa-laptop"></i>
-            <span>Pengabdian</span>
+        <li>
+          <a href="<?php echo base_url('/dashboard/Pengabdian/tampil') ?>">
+           <i class=" fa fa-street-view"></i> 
+           <span>Pengabdian</span>
           </a>
         </li>
-        <li class="treeview">
+        <li>
           <a href="#">
-            <i class="fa fa-edit"></i> 
+            <i class="fa fa-laptop"></i> 
             <span>Penunjang</span>
           </a>
         </li>
