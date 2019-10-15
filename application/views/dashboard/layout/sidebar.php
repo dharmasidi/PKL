@@ -22,12 +22,10 @@
             <i class=" fa fa-graduation-cap"></i> 
             <span>Pendidikan</span>
           </a>
-        </li>
-       
         <li>
-          <a href="#">
-            <i class="fa fa-book"></i>
-            <span>Penelitian</span>
+          <a href="<?php echo base_url('/penelitian') ?>">
+           <i class=" fa fa-book"></i> 
+           <span>Penelitian</span>
           </a>
         </li>
         <li>

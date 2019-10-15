@@ -50,6 +50,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['dashboard'] = 'dashboard/dashboard/index';
+$route['penelitian'] = 'dashboard/penelitian/tampil';
+$route['penelitian/tambah'] = 'dashboard/penelitian/tambah';
+$route['penelitian/edit'] = 'dashboard/penelitian/edit';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
