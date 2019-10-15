@@ -16,6 +16,11 @@
         Data Pengabdian
       </h1>
     </section>
+    <?php if (validation_errors()) {?>
+    <div class="container">
+      <?php echo validation_errors();?>
+    </div> 
+    <?php } ?>     
 
     <!-- Main content -->
     <section class="content">
@@ -29,57 +34,55 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form">
+            <form role="form" enctype="multipart/form-data" action="<?php echo base_url('dashboard/Pengabdian/add')?>" method="post">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Pilih Bidang</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang Pengabdian" disabled>
+                  <label for="exampleInputEmail1">Bidang</label>
+                  <input type="text" class="form-control" id="#" name="bidang" placeholder="Bidang Pengabdian" disabled>
                 </div>
                 <div class="form-group">
                   <label>Uraian Kegiatan</label>
-                  <select class="form-control">
-                    <option>PELAKSANAAN PENGABDIAN KEPADA MASYARAKAT</option>
-                    <option>option 2</option>
-                    <option>option 3</option>
-                    <option>option 4</option>
-                    <option>option 5</option>
+                  <select class="form-control" name="uraianKegiatan">
+                   <?php foreach ($uraian_kegiatan as $data){  ?>
+                    <option value="<?=$data->id_uraian;?>"><?=$data->nama_uraian;?></option>
+                    <?php }; ?>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Sub Kegiatan</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Sub Kegiatan">
+                  <label for="exampleInputPassword1" name="subKegiatan" >Sub Kegiatan</label>
+                  <input type="text" name="subKegiatan" class="form-control" id="" placeholder="Sub Kegiatan">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Tanggal Kegiatan</label>
-                  <input type="date" class="form-control" id="exampleInputPassword1" >
-                </div>
+                  <label for="exampleInputPassword1" name="tanggalKegiatan" >Tanggal Kegiatan</label>
+                  <input type="date" class="form-control" name="tanggalKegiatan" id="" >
+                </div>  
                 <div class="form-group">
                   <label for="exampleInputPassword1">Satuan Hasil</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Satuan Hasil">
+                  <input type="text" class="form-control" name="satuanHasil" id="" value="<?php echo set_value('satuanHasil');?>" placeholder="Satuan Hasil">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Volume Kegiatan</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Volume Kegiatan">
+                  <input type="text" class="form-control" name="volumeKegiatan" id="" placeholder="Volume Kegiatan">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Angka Kredit</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Angka Kredit">
+                  <input type="text" class="form-control" name="angkaKredit" id="" placeholder="Angka Kredit">
                 </div>
                 <div class="form-group">
                   <label for="exampleInputFile">Bukti Fisik</label>
-                  <input type="file" id="exampleInputFile">
+                  <input type="file" name="buktiFisik" id="">
                 </div>
               
                 <div class="form-group">
                   <label for="exampleInputPassword1">Deskripsi</label>
-                  <textarea type="textarea" class="form-control" id="exampleInputPassword1" placeholder="Keterangan / deskripsi"></textarea>
+                  <textarea type="textarea" class="form-control" name="deskripsi" id="" placeholder="Keterangan / deskripsi"></textarea>
                 </div>
               </div>
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
               </div>
             </form>
           </div>

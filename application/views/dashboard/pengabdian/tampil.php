@@ -1,7 +1,17 @@
 
 <!DOCTYPE html>
 <html>
-<?php $this->load->View('dashboard/layout/head') ?>
+<?php $this->load->View('dashboard/layout/head');?>
+<style type="text/css">
+    .text-center{
+      text-align: center;
+    }
+    .text-padding{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+    }
+  </style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -34,42 +44,43 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="example1" class="table-bordered table-hover">
                 <thead>
-                <tr>
-                  <th>No</th>
-                  <th>Uraian Kegiatan</th>
-                  <th>Sub Kegiatan</th>
-                  <th>Tanggal</th>
+                <tr style="width: 100% !important;">
+                  <th>Tanggal Kegiatan</th>
+                  <th style="width: 20% !important;">Uraian Kegiatan</th>
+                  <th style="width: 20% !important;">Sub Kegiatan</th>
                   <th>Satuan Hasil</th>
                   <th>Volume Kegiatan</th>
                   <th>Angka Kredit</th>
-                  <th>Bukti Fisik</th>
-                  <th>Keterangan</th>
-                  <th>Aksi</th>
+                  <th style="width: 10% !important;">Bukti Fisik</th>
+                  <th style="width: 20% !important;">Keterangan</th>
+                  <th style="width: 5% !important;">Aksi</th>
                 </tr>
                 </thead>
                 <tbody>
+                  <?php 
+                    foreach($all as $item){
+                  ?>
                 <tr>
-                  <td>1</td>
-                  <td>PELAKSANAAN PENGABDIAN KEPADA MASYARAKAT</td>
-                  <td>Menduduki jabatan pimpinan pada lembaga pemerintahan/pejabat Negara yang harus dibebaskan dari jabatan organiknya</td>
-                  <td> 11 Mei 2019</td>
-                  <td>Tiap Semester</td>
-                  <td>1</td>
-                  <td>5.5</td>
-                  <td>File lalalala</td>
-                  <td>SK. Pengangkatan  dan surat ijin Rektor</td>
-                  <td>
-                    <a href="#" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin Hapus?')"><i class="fa fa-trash"></i> Hapus</a>
-                    <a href="<?php echo base_url('dashboard/Pengabdian/edit') ?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class="fa fa-pencil"> Edit</i></a>     
+                  <td class="text-padding"><?=$item->tanggal; ?></td>
+                  <td class="text-padding"><?=$item->uraian; ?></td>
+                  <td class="text-padding"><?=$item->sub_kegiatan; ?></td>
+                  <td class="text-center text-padding"><?=$item->satuan_hasil; ?></td>
+                  <td class="text-center text-padding"><?=$item->jumlah_volume; ?></td>
+                  <td class="text-center text-padding"><?=$item->angka_kredit; ?></td>
+                  <td class="text-padding text-padding"> <a href="<?php echo base_url('/dashboard/Pengabdian/file/'.$item->berkas);?>"><?=$item->berkas; ?></a></td>
+                  <td class="text-padding"><?=$item->deskripsi; ?></td>
+                  <td class="text-padding" style="">
+                    <a href="<?php echo base_url('/dashboard/Pengabdian/hapus/'.$item->id_kegiatan); ?>" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash"></i> Hapus</a>
+                    <a href="<?php echo base_url('dashboard/Pengabdian/edit/'.$item->id_kegiatan);?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class=" ace-icon fa fa-pencil bigger-130"> Edit</i></a>     
                   </td>
 
                 </tr>
-                
+                <?php }; ?>
                 </tbody>
                 <tfoot>
-                <tr>
+                <!-- <tr>
                   <th>No</th>
                   <th>Uraian Kegiatan</th>
                   <th>Sub Kegiatan</th>
@@ -80,7 +91,7 @@
                   <th>Bukti Fisik</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
-                </tr>
+                </tr> -->
                 </tfoot>
               </table>
             </div>
