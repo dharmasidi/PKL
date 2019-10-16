@@ -1,14 +1,23 @@
+
 <!DOCTYPE html>
 <html>
-<?php $this->load->view('dashboard/layout/head')?>
+<?php $this->load->View('dashboard/layout/head');?>
+<style type="text/css">
+    .text-center{
+      text-align: center;
+    }
+    .text-padding{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+    }
+  </style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-<?php $this->load->view('dashboard/layout/header')  ?>  
+ <?php $this->load->view('dashboard/layout/header');  ?>
   <!-- Left side column. contains the logo and sidebar -->
-<?php $this->load->view('dashboard/layout/sidebar')  ?>  
-
-  <!-- Content Wrapper. Contains page content -->
+  <?php $this->load->view('dashboard/layout/sidebar');  ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -25,7 +34,7 @@
                   <h3 class="box-title">Data Penelitian</h3>
                 </div>
                 <div class="col-sm-2">
-                  <a href="<?php echo base_url('penelitian/tambah') ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
+                  <a href="<?php echo base_url('/dashboard/Penelitian/tambah') ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
                 </div>
               </div>
               
@@ -35,9 +44,43 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table id="example1" class="table table-bordered table-hover">
+              <table id="example1" class="table-bordered table-hover">
                 <thead>
+                <tr style="width: 100% !important;">
+                  <th>Tanggal Kegiatan</th>
+                  <th style="width: 20% !important;">Uraian Kegiatan</th>
+                  <th style="width: 20% !important;">Sub Kegiatan</th>
+                  <th>Satuan Hasil</th>
+                  <th>Volume Kegiatan</th>
+                  <th>Angka Kredit</th>
+                  <th style="width: 10% !important;">Bukti Fisik</th>
+                  <th style="width: 20% !important;">Keterangan</th>
+                  <th style="width: 5% !important;">Aksi</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <?php 
+                    foreach($all as $item){
+                  ?>
                 <tr>
+                  <td class="text-padding"><?=$item->tanggal; ?></td>
+                  <td class="text-padding"><?=$item->uraian; ?></td>
+                  <td class="text-padding"><?=$item->sub_kegiatan; ?></td>
+                  <td class="text-center text-padding"><?=$item->satuan_hasil; ?></td>
+                  <td class="text-center text-padding"><?=$item->jumlah_volume; ?></td>
+                  <td class="text-center text-padding"><?=$item->angka_kredit; ?></td>
+                  <td class="text-padding text-padding"> <a href="<?php echo base_url('/dashboard/Penelitian/file/'.$item->berkas);?>"><?=$item->berkas; ?></a></td>
+                  <td class="text-padding"><?=$item->deskripsi; ?></td>
+                  <td class="text-padding" style="">
+                    <a href="<?php echo base_url('/dashboard/Penelitian/hapus/'.$item->id_kegiatan); ?>" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash"></i> Hapus</a>
+                    <a href="<?php echo base_url('dashboard/Penelitian/edit/'.$item->id_kegiatan);?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class=" ace-icon fa fa-pencil bigger-130"> Edit</i></a>     
+                  </td>
+
+                </tr>
+                <?php }; ?>
+                </tbody>
+                <tfoot>
+                <!-- <tr>
                   <th>No</th>
                   <th>Uraian Kegiatan</th>
                   <th>Sub Kegiatan</th>
@@ -48,27 +91,8 @@
                   <th>Bukti Fisik</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>test</td>
-                  <td>test</td>
-                  <td> 11 Mei 2019</td>
-                  <td>Tiap Semester</td>
-                  <td>1</td>
-                  <td>5.5</td>
-                  <td>test</td>
-                  <td>test</td>
-                  <td>
-                    <a href="#" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin Hapus?')"><i class="fa fa-trash"></i> Hapus</a>
-                    <a href="<?php echo base_url('penelitian/edit') ?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class="fa fa-pencil"> Edit</i></a>     
-                  </td>
-
-                </tr>
-                
-                </tbody>
+                </tr> -->
+                </tfoot>
               </table>
             </div>
             <!-- /.box-body -->
@@ -108,27 +132,5 @@
     })
   })
 </script>
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
-  </footer>
-
-<?php $this->load->view('dashboard/layout/footer') ?>
-
-  <!-- Control Sidebar -->
- 
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
-
-<?php $this->load->view('dashboard/layout/script')  ?>
-
-
 </body>
 </html>
