@@ -25,25 +25,36 @@
           <!-- general form elements -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Tambah Data</h3>
+              <h3 class="box-title">Edit Data</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+<<<<<<< HEAD
             <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url('/dashboard/Penelitian/update'); ?>">
+=======
+            <form role="form" method="POST" enctype="multipart/form-data" action="<?php echo base_url('/dashboard/Penelitian/update') ?>">
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Pilih Bidang</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang Pengabdian" disabled>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang Penelitian" disabled>
                 </div>
                 <div class="form-group">
                   <label>Uraian Kegiatan</label>
                   <select class="form-control" name="uraianKegiatan">
+<<<<<<< HEAD
                     <option value="<?=$kegiatan->id_uraian; ?>"><?=$kegiatan->uraian; ?></option>
                     <?php foreach ($uraian_kegiatan as $data) {
     ?>
                     <option value="<?=$data->id_uraian; ?>"><?=$data->nama_uraian; ?></option>
                     <?php
 } ?>
+=======
+                    <option value="<?=$kegiatan->id_uraian;?>"><?=$kegiatan->uraian?></option>
+                    <?php foreach ($uraian_kegiatan as $data) { ?>
+                    <option value="<?=$data->id_uraian;?>"><?=$data->nama_uraian;?></option>
+                    <?php } ?>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
                   </select>
                 </div>
                 <div class="form-group">

@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <?php $this->load->View('dashboard/layout/head'); ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -8,6 +9,25 @@
  <?php $this->load->view('dashboard/layout/header'); ?>
   <!-- Left side column. contains the logo and sidebar -->
   <?php $this->load->view('dashboard/layout/sidebar'); ?>
+=======
+<?php $this->load->View('dashboard/layout/head');?>
+<style type="text/css">
+    .text-center{
+      text-align: center;
+    }
+    .text-padding{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 5px;
+    }
+  </style>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+ <?php $this->load->view('dashboard/layout/header');  ?>
+  <!-- Left side column. contains the logo and sidebar -->
+  <?php $this->load->view('dashboard/layout/sidebar');  ?>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -24,7 +44,11 @@
                   <h3 class="box-title">Data Penelitian</h3>
                 </div>
                 <div class="col-sm-2">
+<<<<<<< HEAD
                   <a href="<?php echo base_url('/dashboard/Penelitian/tambah'); ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
+=======
+                  <a href="<?php echo base_url('/dashboard/Penelitian/tambah') ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
                 </div>
               </div>
               
@@ -34,12 +58,18 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+<<<<<<< HEAD
               <table id="example1" class="table table-bordered table-hover">
               <thead>
+=======
+              <table id="example1" class="table-bordered table-hover">
+                <thead>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
                 <tr style="width: 100% !important;">
                   <th>Tanggal Kegiatan</th>
                   <th style="width: 20% !important;">Uraian Kegiatan</th>
                   <th style="width: 20% !important;">Sub Kegiatan</th>
+<<<<<<< HEAD
                   <th>Satuan Hasil</th>
                   <th>Volume Kegiatan</th>
                   <th>Angka Kredit</th>
@@ -76,14 +106,55 @@
                   <th>Uraian Kegiatan</th>
                   <th>Sub Kegiatan</th>
                   <th>Tanggal</th>
+=======
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
+                  <th>Satuan Hasil</th>
+                  <th>Volume Kegiatan</th>
+                  <th>Angka Kredit</th>
+                  <th style="width: 10% !important;">Bukti Fisik</th>
+                  <th style="width: 20% !important;">Keterangan</th>
+                  <th style="width: 5% !important;">Aksi</th>
+                </tr>
+<<<<<<< HEAD
+                </tfoot>-->
+=======
+                </thead>
+                <tbody>
+                  <?php 
+                    foreach($all as $item){
+                  ?>
+                <tr>
+                  <td class="text-padding"><?=$item->tanggal; ?></td>
+                  <td class="text-padding"><?=$item->uraian; ?></td>
+                  <td class="text-padding"><?=$item->sub_kegiatan; ?></td>
+                  <td class="text-center text-padding"><?=$item->satuan_hasil; ?></td>
+                  <td class="text-center text-padding"><?=$item->jumlah_volume; ?></td>
+                  <td class="text-center text-padding"><?=$item->angka_kredit; ?></td>
+                  <td class="text-padding text-padding"> <a href="<?php echo base_url('/dashboard/Penelitian/file/'.$item->berkas);?>"><?=$item->berkas; ?></a></td>
+                  <td class="text-padding"><?=$item->deskripsi; ?></td>
+                  <td class="text-padding" style="">
+                    <a href="<?php echo base_url('/dashboard/Penelitian/hapus/'.$item->id_kegiatan); ?>" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash"></i> Hapus</a>
+                    <a href="<?php echo base_url('dashboard/Penelitian/edit/'.$item->id_kegiatan);?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class=" ace-icon fa fa-pencil bigger-130"> Edit</i></a>     
+                  </td>
+
+                </tr>
+                <?php }; ?>
+                </tbody>
+                <tfoot>
+                <!-- <tr>
+                  <th>No</th>
+                  <th>Uraian Kegiatan</th>
+                  <th>Sub Kegiatan</th>
+                  <th>Tanggal</th>
                   <th>Satuan Hasil</th>
                   <th>Volume Kegiatan</th>
                   <th>Angka Kredit</th>
                   <th>Bukti Fisik</th>
                   <th>Keterangan</th>
                   <th>Aksi</th>
-                </tr>
-                </tfoot>-->
+                </tr> -->
+                </tfoot>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
               </table>
             </div>
             <!-- /.box-body -->

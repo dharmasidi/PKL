@@ -16,6 +16,11 @@
         Data Penelitian
       </h1>
     </section>
+    <?php if (validation_errors()) {?>
+    <div class="container">
+      <?php echo validation_errors();?>
+    </div> 
+    <?php } ?>     
 
     <!-- Main content -->
     <section class="content">
@@ -29,15 +34,20 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
+<<<<<<< HEAD
             <form role="form"enctype="multipart/form-data" action="<?php echo base_url('dashboard/Penelitian/add')?>" method="post">
+=======
+            <form role="form" enctype="multipart/form-data" action="<?php echo base_url('dashboard/Penelitian/add')?>" method="post">
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Pilih Bidang</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang Penelitian" disabled>
+                  <label for="exampleInputEmail1">Bidang</label>
+                  <input type="text" class="form-control" id="#" name="bidang" placeholder="Bidang Penelitian" disabled>
                 </div>
                 <div class="form-group">
                   <label>Uraian Kegiatan</label>
                   <select class="form-control" name="uraianKegiatan">
+<<<<<<< HEAD
                    <?php foreach ($uraian_kegiatan as $data) {
     ?>
                     <option value="<?=$data->id_uraian; ?>"><?=$data->nama_uraian; ?></option>
@@ -47,6 +57,15 @@
                 </div>
 
                <div class="form-group">
+=======
+                   <?php foreach ($uraian_kegiatan as $data){  ?>
+                    <option value="<?=$data->id_uraian;?>"><?=$data->nama_uraian;?></option>
+                    <?php }; ?>
+                  </select>
+                </div>
+
+                <div class="form-group">
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
                   <label for="exampleInputPassword1" name="subKegiatan" >Sub Kegiatan</label>
                   <input type="text" name="subKegiatan" class="form-control" id="" placeholder="Sub Kegiatan">
                 </div>
@@ -79,7 +98,11 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
+<<<<<<< HEAD
                 <button type="submit"name="simpan" class="btn btn-primary">Submit</button>
+=======
+                <button type="submit" name="simpan" class="btn btn-primary">Simpan</button>
+>>>>>>> adacea657d096885c729942f7c8af799ad51d357
               </div>
             </form>
           </div>
