@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -53,8 +53,22 @@ $route['dashboard'] = 'dashboard/dashboard/index';
 $route['penelitian'] = 'dashboard/penelitian/tampil';
 $route['penelitian/tambah'] = 'dashboard/penelitian/tambah';
 $route['penelitian/edit'] = 'dashboard/penelitian/edit';
+
+$route['pendidikan'] = 'dashboard/pendidikan/tampil';
+$route['pendidikan/tambah'] = 'dashboard/pendidikan/tambah';
+$route['pendidikan/edit'] = 'dashboard/pendidikan/edit';
+
+$route['penunjang'] = 'dashboard/penunjang/tampil';
+$route['penunjang/tambah'] = 'dashboard/penunjang/tambah';
+$route['penunjang/edit'] = 'dashboard/penunjang/edit';
+
+$route['penelitian'] = 'dashboard/penelitian/tampil';
+$route['penelitian/tambah'] = 'dashboard/penelitian/tambah';
+$route['penelitian/edit'] = 'dashboard/penelitian/edit';
+
+
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['translate_uri_dashes'] = false;
 
 
 // CRUD pengabdian

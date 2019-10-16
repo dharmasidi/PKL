@@ -1,34 +1,34 @@
 <?php
     defined('BASEPATH') or exit('No direct script access allowed');
 
-    class Penelitian extends CI_Controller
+    class Penunjang extends CI_Controller
     {
         public function __construct()
         {
             parent::__construct();
-            $this->load->model("Penelitian_model");
+            $this->load->model("Penunjang_model");
             $this->load->library('form_validation');
             $this->load->helper('url', 'form');
-            //$this->load->helper(array('Penelitian', 'url'));
-            $this->Penelitian = $this->Penelitian_model;
+            //$this->load->helper(array('Penunjang', 'url'));
+            $this->Penunjang = $this->Penunjang_model;
         }
 
         public function tampil()
         {
-            $data['all'] = $this->Penelitian->get_all();
-            $this->load->view('/dashboard/Penelitian/tampil', $data);
+            $data['all'] = $this->Penunjang->get_all();
+            $this->load->view('/dashboard/Penunjang/tampil', $data);
         }
         public function tambah()
         {
-            $data['all'] = $this->Penelitian->get_all();
-            $data['uraian_kegiatan'] = $this->Penelitian->uraian_kegiatan();
-            $this->load->view('dashboard/Penelitian/tambah', $data);
+            $data['all'] = $this->Penunjang->get_all();
+            $data['uraian_kegiatan'] = $this->Penunjang->uraian_kegiatan();
+            $this->load->view('dashboard/Penunjang/tambah', $data);
         }
         public function edit($id)
         {
-            $data['kegiatan'] = $this->Penelitian->editPenelitian($id);
-            $data['uraian_kegiatan'] = $this->Penelitian->uraian_kegiatan();
-            $this->load->view('/dashboard/Penelitian/edit', $data);
+            $data['kegiatan'] = $this->Penunjang->editPenunjang($id);
+            $data['uraian_kegiatan'] = $this->Penunjang->uraian_kegiatan();
+            $this->load->view('/dashboard/Penunjang/edit', $data);
         }
 
         public function add()
@@ -43,8 +43,8 @@
             $this->form_validation->set_rules('deskripsi', 'Deskripsi', 'required');
 
             if ($this->form_validation->run() == false) {
-                //redirect(base_url('dashboard/Penelitian/tambah'));
-                $this->load->view('/dashboard/Penelitian/tambah');
+                //redirect(base_url('dashboard/Penunjang/tambah'));
+                $this->load->view('/dashboard/Penunjang/tambah');
             } else {
                 //upload file
                 $namefile = $_FILES['buktiFisik']['name'];
@@ -82,8 +82,8 @@
                 $data['berkas'] = $buktiFisik;
                 $data['deskripsi'] =$deskripsi;
             
-                $this->Penelitian->tambahPenelitian($data);
-                redirect(base_url('dashboard/Penelitian/tampil'));
+                $this->Penunjang->tambahPenunjang($data);
+                redirect(base_url('dashboard/Penunjang/tampil'));
             }
         }
 
@@ -132,15 +132,15 @@
             $data['berkas'] = $buktiFisik;
             $data['deskripsi'] =$deskripsi;
             
-            $this->Penelitian->updatePenelitian($id, $data);
-            redirect(base_url('dashboard/Penelitian/tampil'));
+            $this->Penunjang->updatePenunjang($id, $data);
+            redirect(base_url('dashboard/Penunjang/tampil'));
         }
 
         public function hapus()
         {
             $id = $this->uri->segment('4');
-            $this->Penelitian->hapus($id);
-            redirect(base_url('dashboard/Penelitian/tampil'));
+            $this->Penunjang->hapus($id);
+            redirect(base_url('dashboard/Penunjang/tampil'));
         }
 
         public function file()

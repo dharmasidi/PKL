@@ -13,7 +13,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Data Penelitian
+        Data pendidikan
       </h1>
     </section>
 
@@ -29,11 +29,11 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form role="form"enctype="multipart/form-data" action="<?php echo base_url('dashboard/Penelitian/add')?>" method="post">
+            <form role="form"enctype="multipart/form-data" action="<?php echo base_url('dashboard/pendidikan/add')?>" method="post">
               <div class="box-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Pilih Bidang</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang Penelitian" disabled>
+                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Bidang pendidikan" disabled>
                 </div>
                 <div class="form-group">
                   <label>Uraian Kegiatan</label>

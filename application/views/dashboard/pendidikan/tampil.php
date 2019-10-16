@@ -21,10 +21,10 @@
             <div class="box-header">
               <div class="row">
                 <div class="col-sm-10">
-                  <h3 class="box-title">Data Penelitian</h3>
+                  <h3 class="box-title">Data Pendidikan</h3>
                 </div>
                 <div class="col-sm-2">
-                  <a href="<?php echo base_url('/dashboard/Penelitian/tambah'); ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
+                  <a href="<?php echo base_url('/dashboard/pendidikan/tambah'); ?>"><button type="button" class="btn btn-success" ><i class="fa fa-plus"></i> Tambah Data</button></a>
                 </div>
               </div>
               
@@ -59,11 +59,11 @@
                   <td class="text-center text-padding"><?=$item->satuan_hasil; ?></td>
                   <td class="text-center text-padding"><?=$item->jumlah_volume; ?></td>
                   <td class="text-center text-padding"><?=$item->angka_kredit; ?></td>
-                  <td class="text-padding text-padding"> <a href="<?php echo base_url('/dashboard/Penelitian/file/'.$item->berkas); ?>"><?=$item->berkas; ?></a></td>
+                  <td class="text-padding text-padding"> <a href="<?php echo base_url('/dashboard/Pendidikan/file/'.$item->berkas); ?>"><?=$item->berkas; ?></a></td>
                   <td class="text-padding"><?=$item->deskripsi; ?></td>
                   <td class="text-padding" style="">
-                    <a href="<?php echo base_url('/dashboard/Penelitian/hapus/'.$item->id_kegiatan); ?>" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash"></i> Hapus</a>
-                    <a href="<?php echo base_url('dashboard/Penelitian/edit/'.$item->id_kegiatan); ?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class=" ace-icon fa fa-pencil bigger-130"> Edit</i></a>     
+                    <a href="<?php echo base_url('/dashboard/Pendidikan/hapus/'.$item->id_kegiatan); ?>" class="btn btn-danger btn-xs" alt="" style="margin-bottom: 10px;" onclick="return confirm('Yakin ingin menghapus data?')"><i class="fa fa-trash"></i> Hapus</a>
+                    <a href="<?php echo base_url('dashboard/Pendidikan/edit/'.$item->id_kegiatan); ?>"  class="btn btn-warning btn-xs editbuku" alt=""><i class=" ace-icon fa fa-pencil bigger-130"> Edit</i></a>     
                   </td>
 
                 </tr>
